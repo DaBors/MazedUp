@@ -53,10 +53,10 @@ public class BuildWalls : MonoBehaviour
 
                                 allPrefabs.Add(newBlock);
                             }
-                            if(line[i] == 'T')
-                            {
-                                allPrefabs.Add(Instantiate(myFlame, new Vector3(lineNumber * myWall.transform.localScale.z, 0, i * myWall.transform.localScale.x), Quaternion.identity));
-                            }
+                            //else if(line[i] == 'T')
+                            //{
+                            //    allPrefabs.Add(Instantiate(myFlame, new Vector3(lineNumber * myWall.transform.localScale.z, 0, i * myWall.transform.localScale.x), Quaternion.identity));
+                            //}
                         }
                     }
 

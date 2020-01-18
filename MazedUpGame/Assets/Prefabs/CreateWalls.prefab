@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d22f68d6596fb140ae8eb7b2725f57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPrefab: {fileID: 2180797659301399194, guid: 4eaee57d1c5afcf45b2da95ab7e0b5b6,
-    type: 3}
+  myWall: {fileID: 2180797659301399194, guid: 4eaee57d1c5afcf45b2da95ab7e0b5b6, type: 3}
+  myFlame: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
