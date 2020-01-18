@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-        lastDirection = Vector3.zero;
+        lastDirection = Vector3.forward;
     }
 
     // Update is called once per frame
