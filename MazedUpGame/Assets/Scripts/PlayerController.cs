@@ -29,14 +29,13 @@ public class PlayerController : MonoBehaviour
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
 
-        moveDirection = transform.forward * v * Speed * Time.deltaTime;
-        //moveDirection.x = h * Speed * Time.deltaTime;
+        moveDirection.z = v * Speed * Time.deltaTime;
+        moveDirection.x = h * Speed * Time.deltaTime;
 
-        transform.Rotate(Vector3.up * h);
+        transform.forward = Vector3.Slerp(transform.rotation.eulerAngles, Vector3.up * h, Time.deltaTime);
 
         animator.SetFloat("Speed", v);
 
         controller.Move(moveDirection);
-        //if (currentAnimation.clip.name == "Run_SwordShield" && currentAnimation.clip.)
     }
 }
