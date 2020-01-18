@@ -4,16 +4,18 @@ using System.Text;
 using System.IO;
 using System;
 
+//[ExecuteInEditMode]
 public class BuildWalls : MonoBehaviour
 {
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
-    public GameObject myPrefab;
+    public GameObject myWall;
+    public GameObject myFlame;
     List<GameObject> allPrefabs = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        buildWalls("Assets/Mazes/maze1.txt");
+        buildWalls("Assets/Mazes/maze2.txt");
     }
 
     // Update is called once per frame
@@ -45,7 +47,15 @@ public class BuildWalls : MonoBehaviour
                         {
                             if(line[i] == '1')
                             {
-                                allPrefabs.Add(Instantiate(myPrefab, new Vector3(i * myPrefab.transform.localScale.x, (float) myPrefab.transform.localScale.y/2, lineNumber * myPrefab.transform.localScale.z), Quaternion.identity));
+                                GameObject newBlock = Instantiate(myWall, gameObject.transform.position + new Vector3(i * myWall.transform.localScale.x, (float)myWall.transform.localScale.y / 2, lineNumber * myWall.transform.localScale.z), Quaternion.identity);
+
+                                newBlock.transform.parent = gameObject.transform;
+
+                                allPrefabs.Add(newBlock);
+                            }
+                            if(line[i] == 'T')
+                            {
+                                allPrefabs.Add(Instantiate(myFlame, new Vector3(lineNumber * myWall.transform.localScale.z, 0, i * myWall.transform.localScale.x), Quaternion.identity));
                             }
                         }
                     }
