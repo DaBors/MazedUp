@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(moveDirection.magnitude != 0 ? moveDirection : lastDirection);
 
-        animator.SetFloat("Speed", moveDirection.magnitude);
+        animator.SetFloat("Speed", moveDirection.magnitude != 0 ? 1 : 0);
 
         controller.Move(moveDirection);
         lastDirection = moveDirection.magnitude != 0 ? moveDirection : lastDirection;
