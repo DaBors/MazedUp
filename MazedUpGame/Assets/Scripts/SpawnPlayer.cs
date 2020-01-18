@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnPlayer : MonoBehaviour
 {
+    public int playerIndex = 1;
+
     public int playerStartPositionX;
 
     public int playerStartPositionY;
@@ -17,6 +19,8 @@ public class SpawnPlayer : MonoBehaviour
     void Start()
     {
         playerCharacterInstance = Instantiate(playerCharacter, gameObject.transform.position + new Vector3(playerStartPositionX, 0, playerStartPositionY), Quaternion.identity);
+
+        playerCharacterInstance.GetComponent<PlayerController>().PlayerIndex = playerIndex;
 
         mainCamera.GetComponent<CameraSmoothFollow>().Target = playerCharacterInstance.transform;
     }

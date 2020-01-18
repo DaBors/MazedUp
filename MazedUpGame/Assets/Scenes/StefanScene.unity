@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: playerStartPositionY
       value: 76
       objectReference: {fileID: 0}
+    - target: {fileID: 2102793623090825833, guid: 278c8caa356a4c5429f466619a0ac16c,
+        type: 3}
+      propertyPath: playerIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2102793623090825835, guid: 278c8caa356a4c5429f466619a0ac16c,
         type: 3}
       propertyPath: m_Name
@@ -200,6 +205,11 @@ PrefabInstance:
     - target: {fileID: 2102793623192217610, guid: 278c8caa356a4c5429f466619a0ac16c,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102793623192217610, guid: 278c8caa356a4c5429f466619a0ac16c,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2102793623192217611, guid: 278c8caa356a4c5429f466619a0ac16c,
@@ -420,7 +430,7 @@ PrefabInstance:
     - target: {fileID: 2102793623192217610, guid: 278c8caa356a4c5429f466619a0ac16c,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2102793623192217611, guid: 278c8caa356a4c5429f466619a0ac16c,
         type: 3}
