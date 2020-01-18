@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System;
 
+//[ExecuteInEditMode]
 public class BuildWalls : MonoBehaviour
 {
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
@@ -45,7 +46,11 @@ public class BuildWalls : MonoBehaviour
                         {
                             if(line[i] == '1')
                             {
-                                allPrefabs.Add(Instantiate(myPrefab, new Vector3(i * myPrefab.transform.localScale.x, (float) myPrefab.transform.localScale.y/2, lineNumber * myPrefab.transform.localScale.z), Quaternion.identity));
+                                GameObject newBlock = Instantiate(myPrefab, gameObject.transform.position + new Vector3(i * myPrefab.transform.localScale.x, (float)myPrefab.transform.localScale.y / 2, lineNumber * myPrefab.transform.localScale.z), Quaternion.identity);
+
+                                newBlock.transform.parent = gameObject.transform;
+
+                                allPrefabs.Add(newBlock);
                             }
                         }
                     }
