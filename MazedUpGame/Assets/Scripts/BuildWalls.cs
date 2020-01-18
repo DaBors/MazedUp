@@ -45,7 +45,7 @@ public class BuildWalls : MonoBehaviour
                         {
                             if(line[i] == '1')
                             {
-                                allPrefabs.Add(Instantiate(myPrefab, new Vector3(i, 0, lineNumber), Quaternion.identity));
+                                allPrefabs.Add(Instantiate(myPrefab, new Vector3(i * myPrefab.transform.localScale.x, (float) myPrefab.transform.localScale.y/2, lineNumber * myPrefab.transform.localScale.z), Quaternion.identity));
                             }
                         }
                     }
