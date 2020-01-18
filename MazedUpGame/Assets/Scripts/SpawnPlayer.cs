@@ -22,6 +22,8 @@ public class SpawnPlayer : MonoBehaviour
 
         playerCharacterInstance.GetComponent<PlayerController>().PlayerIndex = playerIndex;
 
+        playerCharacterInstance.transform.parent = gameObject.transform;
+
         mainCamera.GetComponent<CameraSmoothFollow>().Target = playerCharacterInstance.transform;
     }
 
