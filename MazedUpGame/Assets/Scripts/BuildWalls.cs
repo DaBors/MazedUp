@@ -10,7 +10,12 @@ public class BuildWalls : MonoBehaviour
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
     public GameObject myWall;
     public GameObject myFlame;
-    List<GameObject> allPrefabs = new List<GameObject>();
+    public GameObject myPlinth;
+
+    public int playerIndex = 1;
+
+    List<GameObject> allMapStructure = new List<GameObject>();
+    List<GameObject> allObjects = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -45,14 +50,56 @@ public class BuildWalls : MonoBehaviour
                     {
                         for (int i = 0; i < line.Length; i++)
                         {
-                            if(line[i] == '1')
+                            GameObject structureToInstantiate = myWall;
+
+                            Vector3 positionForStructure = gameObject.transform.position + new Vector3(i * myWall.transform.localScale.x * 4, 0, lineNumber * myWall.transform.localScale.z * 4);
+
+                            if (line[i] != '1')
                             {
-                                GameObject newBlock = Instantiate(myWall, gameObject.transform.position + new Vector3(i * myWall.transform.localScale.x, (float)myWall.transform.localScale.y / 2, lineNumber * myWall.transform.localScale.z), Quaternion.identity);
+                                if ((line[i] == 'B') && (playerIndex == 1))
+                                {
+                                    GameObject newObject = Instantiate(myPlinth, positionForStructure, Quaternion.identity);
 
-                                newBlock.transform.parent = gameObject.transform;
+                                    Light plinthLight = newObject.GetComponentInChildren<Light>();
 
-                                allPrefabs.Add(newBlock);
+                                    plinthLight.color = Color.blue;
+
+                                    allObjects.Add(newObject);
+
+                                    newObject.transform.parent = gameObject.transform;
+                                }
+                                else if (line[i] == 'R' && (playerIndex == 2))
+                                {
+                                    GameObject newObject = Instantiate(myPlinth, positionForStructure, Quaternion.identity);
+
+                                    Light plinthLight = newObject.GetComponentInChildren<Light>();
+
+                                    plinthLight.color = Color.red;
+
+                                    allObjects.Add(newObject);
+
+                                    newObject.transform.parent = gameObject.transform;
+                                }
+
+                                structureToInstantiate = null;
                             }
+
+                            GameObject newStructure = null;
+
+                            if (structureToInstantiate != null)
+                            {
+                                newStructure = Instantiate(structureToInstantiate, positionForStructure, Quaternion.identity);
+                            }
+                            else
+                            {
+                                newStructure = new GameObject();
+
+                                newStructure.transform.position = positionForStructure;
+                            }
+                            
+                            newStructure.transform.parent = gameObject.transform;
+
+                            allMapStructure.Add(newStructure);
                             //else if(line[i] == 'T')
                             //{
                             //    allPrefabs.Add(Instantiate(myFlame, new Vector3(lineNumber * myWall.transform.localScale.z, 0, i * myWall.transform.localScale.x), Quaternion.identity));

@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d22f68d6596fb140ae8eb7b2725f57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWall: {fileID: 2180797659301399194, guid: 4eaee57d1c5afcf45b2da95ab7e0b5b6, type: 3}
+  myWall: {fileID: 3913639782565113897, guid: 0d97a926608c5a54594a9952a53731e6, type: 3}
   myFlame: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+  myPlinth: {fileID: 100000, guid: de131f6499d3b794d9085d665f44a360, type: 3}
