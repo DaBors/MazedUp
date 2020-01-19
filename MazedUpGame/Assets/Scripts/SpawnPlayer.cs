@@ -18,6 +18,17 @@ public class SpawnPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Camera playerCamera = gameObject.GetComponentInChildren<Camera>();
+
+        if(playerIndex == 1)
+        {
+            playerCamera.rect = new Rect(0, 0, 0.5f, 1);
+        }
+        else
+        {
+            playerCamera.rect = new Rect(0.5F, 0, 0.5f, 1);
+        }
+
         playerCharacterInstance = Instantiate(playerCharacter, gameObject.transform.position + new Vector3(playerStartPositionX, 0, playerStartPositionY), Quaternion.identity);
 
         playerCharacterInstance.GetComponent<PlayerController>().PlayerIndex = playerIndex;
