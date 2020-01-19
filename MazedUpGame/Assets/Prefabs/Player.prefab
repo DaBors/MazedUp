@@ -160,27 +160,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2102793623090825832}
     m_Modifications:
-<<<<<<< HEAD
-=======
-    - target: {fileID: 5679921984336562404, guid: 0344d8a483681a04a80d2c6a4689f4c6,
-        type: 3}
-      propertyPath: myTorchUpDown
-      value: 
-      objectReference: {fileID: 2473551430987904348, guid: 0e05ee17312b27c46ad6e91a010ebf29,
-        type: 3}
-    - target: {fileID: 5679921984336562404, guid: 0344d8a483681a04a80d2c6a4689f4c6,
-        type: 3}
-      propertyPath: myTorchLeftRight
-      value: 
-      objectReference: {fileID: 2473551430987904348, guid: 9f22af7553258b84da930b1ddb748bee,
-        type: 3}
-    - target: {fileID: 5679921984336562404, guid: 0344d8a483681a04a80d2c6a4689f4c6,
-        type: 3}
-      propertyPath: myWall
-      value: 
-      objectReference: {fileID: 3913639782565113897, guid: aee3138734f4b77419f2b7b4d4d50def,
-        type: 3}
->>>>>>> 66b573231cd63e9bd27d90188c04b57eb2d685e8
     - target: {fileID: 5679921984336562405, guid: 0344d8a483681a04a80d2c6a4689f4c6,
         type: 3}
       propertyPath: m_Name
