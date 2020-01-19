@@ -152,6 +152,7 @@ MonoBehaviour:
   FollowSpeed: 10
   FollowY: 10
   FollowZ: 2.5
+  FollowX: 2.5
 --- !u!1001 &2102793622086834664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170,6 +171,12 @@ PrefabInstance:
       propertyPath: myTorchLeftRight
       value: 
       objectReference: {fileID: 2473551430987904348, guid: 9f22af7553258b84da930b1ddb748bee,
+        type: 3}
+    - target: {fileID: 5679921984336562404, guid: 0344d8a483681a04a80d2c6a4689f4c6,
+        type: 3}
+      propertyPath: myWall
+      value: 
+      objectReference: {fileID: 3913639782565113897, guid: aee3138734f4b77419f2b7b4d4d50def,
         type: 3}
     - target: {fileID: 5679921984336562405, guid: 0344d8a483681a04a80d2c6a4689f4c6,
         type: 3}

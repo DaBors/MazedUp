@@ -374,7 +374,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.01
+  m_Intensity: 0.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -564,6 +564,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6052201672864780556, guid: 278c8caa356a4c5429f466619a0ac16c,
+        type: 3}
+      propertyPath: myFlame
+      value: 
+      objectReference: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
     - target: {fileID: 6052201672864780559, guid: 278c8caa356a4c5429f466619a0ac16c,
         type: 3}
       propertyPath: m_LocalPosition.x
