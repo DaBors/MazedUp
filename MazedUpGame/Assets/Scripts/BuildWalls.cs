@@ -10,7 +10,8 @@ public class BuildWalls : MonoBehaviour
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
     public GameObject myWall;
     public GameObject myFlame;
-    public GameObject myFlickeringLight;
+    public GameObject myTorchUpDown;
+    public GameObject myTorchLeftRight;
     public GameObject myPlinth;
     public GameObject winPoint;
 
@@ -56,7 +57,7 @@ public class BuildWalls : MonoBehaviour
         }
         count++;
     }
-    
+
     private bool buildWalls(string fileName)
     {
         // Handle any problems that might arise when reading the text
@@ -73,7 +74,7 @@ public class BuildWalls : MonoBehaviour
                 do
                 {
                     line = theReader.ReadLine();
-                    
+
                     if (line != null)
                     {
                         for (int i = 0; i < line.Length; i++)
@@ -82,7 +83,7 @@ public class BuildWalls : MonoBehaviour
 
                             Vector3 positionForStructure = gameObject.transform.position + new Vector3(i * myWall.transform.localScale.x * 4, 0, lineNumber * myWall.transform.localScale.z * 4);
 
-                            if(line[i] != '1')
+                            if (line[i] != '1')
                             {
                                 if (line[i] == 'B')
                                 {
@@ -126,10 +127,14 @@ public class BuildWalls : MonoBehaviour
 
                                     newObject.transform.parent = gameObject.transform;
                                 }
-	                            else if(line[i] == 'F')
-	                            {
-	                                allObjects.Add(Instantiate(myFlickeringLight, new Vector3(lineNumber * myWall.transform.localScale.z, 1, i * myWall.transform.localScale.x), Quaternion.identity));
-	                            }
+                                else if (line[i] == 'F')
+                                {
+                                    allObjects.Add(Instantiate(myTorchUpDown, positionForStructure, Quaternion.identity));
+                                }
+                                else if (line[i] == 'G')
+                                {
+                                    allObjects.Add(Instantiate(myTorchLeftRight, positionForStructure, Quaternion.Euler(new Vector3(0, 90, 0))));
+                                }
                                 else if(line[i] == 'T')
                                 {
                                     GameObject flame = Instantiate(myFlame, positionForStructure, Quaternion.identity);
@@ -154,7 +159,7 @@ public class BuildWalls : MonoBehaviour
 
                                 newStructure.transform.position = positionForStructure;
                             }
-                            
+
                             newStructure.transform.parent = gameObject.transform;
 
                             allMapStructure.Add(newStructure);
