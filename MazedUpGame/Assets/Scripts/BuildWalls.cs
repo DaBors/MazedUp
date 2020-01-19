@@ -18,6 +18,12 @@ public class BuildWalls : MonoBehaviour
     List<GameObject> allMapStructure = new List<GameObject>();
     List<GameObject> allObjects = new List<GameObject>();
 
+
+    List<GameObject> allFlames = new List<GameObject>();
+    private List<Vector3> flamePositions = new List<Vector3>();
+
+    private UInt32 count = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +33,27 @@ public class BuildWalls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(count == 300)
+        {
+            if(allFlames.Count == 0)
+            {
+                foreach (Vector3 pos in flamePositions)
+                {
+                    GameObject flame = Instantiate(myFlame, pos, Quaternion.identity);
+                    allFlames.Add(flame);
+                }
+            }
+            else
+            {
+                foreach (GameObject flame in allFlames)
+                {
+                    Destroy(flame);
+                }
+                allFlames.Clear();
+            }
+            count = 0;
+        }
+        count++;
     }
     
     private bool buildWalls(string fileName)
@@ -85,6 +111,14 @@ public class BuildWalls : MonoBehaviour
 	                            {
 	                                allObjects.Add(Instantiate(myFlickeringLight, new Vector3(lineNumber * myWall.transform.localScale.z, 1, i * myWall.transform.localScale.x), Quaternion.identity));
 	                            }
+                                else if(line[i] == 'T')
+                                {
+                                    GameObject flame = Instantiate(myFlame, positionForStructure, Quaternion.identity);
+
+                                    allFlames.Add(flame);
+                                    flamePositions.Add(positionForStructure);
+                                    allObjects.Add(flame);
+                                }
 
                                 structureToInstantiate = null;
                             }
@@ -105,10 +139,6 @@ public class BuildWalls : MonoBehaviour
                             newStructure.transform.parent = gameObject.transform;
 
                             allMapStructure.Add(newStructure);
-                            //else if(line[i] == 'T')
-                            //{
-                            //    allPrefabs.Add(Instantiate(myFlame, new Vector3(lineNumber * myWall.transform.localScale.z, 0, i * myWall.transform.localScale.x), Quaternion.identity));
-                            //}
                         }
                     }
 
