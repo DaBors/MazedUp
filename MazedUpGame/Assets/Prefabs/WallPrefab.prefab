@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3260686895408836799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180797659301399194, guid: 4eaee57d1c5afcf45b2da95ab7e0b5b6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eaee57d1c5afcf45b2da95ab7e0b5b6, type: 3}
