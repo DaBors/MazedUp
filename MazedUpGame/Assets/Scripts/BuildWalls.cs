@@ -12,6 +12,7 @@ public class BuildWalls : MonoBehaviour
     public GameObject myFlame;
     public GameObject myFlickeringLight;
     public GameObject myPlinth;
+    public GameObject winPoint;
 
     public int playerIndex = 1;
 
@@ -57,25 +58,43 @@ public class BuildWalls : MonoBehaviour
 
                             if(line[i] != '1')
                             {
-                                if ((line[i] == 'B') && (playerIndex == 1))
+                                if (line[i] == 'B')
                                 {
-                                    GameObject newObject = Instantiate(myPlinth, positionForStructure, Quaternion.identity);
+                                    GameObject newObject = null;
 
-                                    Light plinthLight = newObject.GetComponentInChildren<Light>();
+                                    if (playerIndex == 1)
+                                    {
+                                        newObject = Instantiate(myPlinth, positionForStructure, Quaternion.identity);
 
-                                    plinthLight.color = Color.blue;
+                                        Light plinthLight = newObject.GetComponentInChildren<Light>();
+
+                                        plinthLight.color = Color.blue;
+                                    }
+                                    else
+                                    {
+                                        newObject = Instantiate(winPoint, positionForStructure, Quaternion.identity);
+                                    }
 
                                     allObjects.Add(newObject);
 
                                     newObject.transform.parent = gameObject.transform;
                                 }
-                                else if (line[i] == 'R' && (playerIndex == 2))
+                                else if (line[i] == 'R')
                                 {
-                                    GameObject newObject = Instantiate(myPlinth, positionForStructure, Quaternion.identity);
+                                    GameObject newObject = null;
 
-                                    Light plinthLight = newObject.GetComponentInChildren<Light>();
+                                    if (playerIndex == 2)
+                                    {
+                                        newObject = Instantiate(myPlinth, positionForStructure, Quaternion.identity);
 
-                                    plinthLight.color = Color.red;
+                                        Light plinthLight = newObject.GetComponentInChildren<Light>();
+
+                                        plinthLight.color = Color.red;
+                                    }
+                                    else
+                                    {
+                                        newObject = Instantiate(winPoint, positionForStructure, Quaternion.identity);
+                                    }
 
                                     allObjects.Add(newObject);
 

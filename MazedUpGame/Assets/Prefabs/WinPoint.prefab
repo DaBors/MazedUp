@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5679921984336562405
+--- !u!1 &6512122963004235664
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5679921984336562407}
-  - component: {fileID: 5679921984336562404}
+  - component: {fileID: 6512122963004235662}
+  - component: {fileID: 6512122963004235665}
+  - component: {fileID: 6010757517846991162}
   m_Layer: 0
-  m_Name: CreateWalls
+  m_Name: WinPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5679921984336562407
+--- !u!4 &6512122963004235662
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679921984336562405}
+  m_GameObject: {fileID: 6512122963004235664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 50, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5679921984336562404
+--- !u!136 &6512122963004235665
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512122963004235664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &6010757517846991162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679921984336562405}
+  m_GameObject: {fileID: 6512122963004235664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d22f68d6596fb140ae8eb7b2725f57c, type: 3}
+  m_Script: {fileID: 11500000, guid: db29ddddc5760164dbc35a00a3d1a7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWall: {fileID: 3913639782565113897, guid: 0d97a926608c5a54594a9952a53731e6, type: 3}
-  myFlame: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-  myFlickeringLight: {fileID: 0}
-  myPlinth: {fileID: 100000, guid: de131f6499d3b794d9085d665f44a360, type: 3}
-  winPoint: {fileID: 6512122963004235664, guid: 144915dab5f337342b3c901964e6fc43,
-    type: 3}
-  playerIndex: 1
+  winTime: 0.5
