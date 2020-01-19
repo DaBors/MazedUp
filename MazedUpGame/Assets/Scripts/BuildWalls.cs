@@ -43,6 +43,7 @@ public class BuildWalls : MonoBehaviour
                 {
                     GameObject flame = Instantiate(myFlame, pos, Quaternion.identity);
                     allFlames.Add(flame);
+                    flame.transform.parent = gameObject.transform;
                 }
             }
             else
@@ -129,19 +130,32 @@ public class BuildWalls : MonoBehaviour
                                 }
                                 else if (line[i] == 'F')
                                 {
-                                    allObjects.Add(Instantiate(myTorchUpDown, positionForStructure, Quaternion.identity));
+
+                                    GameObject newObject = Instantiate(myTorchUpDown, positionForStructure, Quaternion.identity);
+
+                                    allObjects.Add(newObject);
+
+                                    newObject.transform.parent = gameObject.transform;
                                 }
                                 else if (line[i] == 'G')
                                 {
-                                    allObjects.Add(Instantiate(myTorchLeftRight, positionForStructure, Quaternion.Euler(new Vector3(0, 90, 0))));
+                                    GameObject newObject = Instantiate(myTorchLeftRight, positionForStructure, Quaternion.Euler(new Vector3(0, 90, 0)));
+
+                                    allObjects.Add(newObject);
+
+                                    newObject.transform.parent = gameObject.transform;
                                 }
                                 else if(line[i] == 'T')
                                 {
                                     GameObject flame = Instantiate(myFlame, positionForStructure, Quaternion.identity);
 
                                     allFlames.Add(flame);
+                                    
                                     flamePositions.Add(positionForStructure);
+
                                     allObjects.Add(flame);
+
+                                    flame.transform.parent = gameObject.transform;
                                 }
 
                                 structureToInstantiate = null;
