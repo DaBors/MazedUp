@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     {
         if(player1.GetComponentInChildren<PlinthScript>().GetWinCondition() && player2.GetComponentInChildren<PlinthScript>().GetWinCondition())
         {
-            Debug.Log("Winning");
+            WinGame();
         }
 
         List<FireCollision> FireCollisions1 = new List<FireCollision>(player1.GetComponentsInChildren<FireCollision>());
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
         {
             if(fc.GetLoseCondition() == true)
             {
-                Debug.Log("Losing!");
+                LoseGame();
             }
         }
 
@@ -30,8 +31,17 @@ public class GameManager : MonoBehaviour
         {
             if (fc.GetLoseCondition() == true)
             {
-                Debug.Log("Losing!");
+                LoseGame();
             }
         }
+    }
+    public void WinGame()
+    {
+        SceneManager.LoadScene("WinScene");
+    }
+
+    public void LoseGame()
+    {
+        SceneManager.LoadScene("Scene1");
     }
 }
