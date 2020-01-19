@@ -14507,6 +14507,7 @@ GameObject:
   - component: {fileID: 11426332}
   - component: {fileID: 11437672}
   - component: {fileID: -7800125364640782834}
+  - component: {fileID: 491323474062011006}
   m_Layer: 8
   m_Name: SmallFires
   m_TagString: Untagged
@@ -14582,3 +14583,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d45dfab098762468b97247bbb37db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseTime: 0.5
+--- !u!65 &491323474062011006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
