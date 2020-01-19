@@ -10,6 +10,7 @@ public class BuildWalls : MonoBehaviour
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
     public GameObject myWall;
     public GameObject myFlame;
+    public GameObject myFlickeringLight;
     public GameObject myPlinth;
 
     public int playerIndex = 1;
@@ -20,7 +21,7 @@ public class BuildWalls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buildWalls("Assets/Mazes/maze2.txt");
+        buildWalls("Assets/Mazes/maze3.txt");
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class BuildWalls : MonoBehaviour
 
                             Vector3 positionForStructure = gameObject.transform.position + new Vector3(i * myWall.transform.localScale.x * 4, 0, lineNumber * myWall.transform.localScale.z * 4);
 
-                            if (line[i] != '1')
+                            if(line[i] == '1')
                             {
                                 if ((line[i] == 'B') && (playerIndex == 1))
                                 {
@@ -80,6 +81,10 @@ public class BuildWalls : MonoBehaviour
 
                                     newObject.transform.parent = gameObject.transform;
                                 }
+	                            else if(line[i] == 'F')
+	                            {
+	                                allObjects.Add(Instantiate(myFlickeringLight, new Vector3(lineNumber * myWall.transform.localScale.z, 1, i * myWall.transform.localScale.x), Quaternion.identity));
+	                            }
 
                                 structureToInstantiate = null;
                             }
