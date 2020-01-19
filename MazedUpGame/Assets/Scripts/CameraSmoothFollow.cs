@@ -23,7 +23,7 @@ public class CameraSmoothFollow : MonoBehaviour
 
         newPos.x = Target.position.x;
         newPos.y = Target.position.y + FollowY;
-        newPos.z = Target.position.z - FollowZ;
+        newPos.z = Target.position.z + (FollowZ * gameObject.transform.parent.GetComponentInChildren<PlayerController>().vSpeed);
 
         var result = Vector3.Slerp(transform.position, newPos, Time.deltaTime * FollowSpeed);
 

@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public float Speed = 1;
 
+    public float vSpeed = 0;
+
     private CharacterController controller;
     private Vector3 forward;
     private Vector3 moveDirection;
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
         moveDirection.z = v * Speed * Time.deltaTime;
         moveDirection.x = h * Speed * Time.deltaTime;
+
+        vSpeed = v;
 
         //transform.Rotate(Vector3.forward * h * Time.deltaTime);
 
