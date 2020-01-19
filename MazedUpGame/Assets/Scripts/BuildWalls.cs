@@ -29,7 +29,7 @@ public class BuildWalls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buildWalls("Assets/Mazes/maze2.txt");
+        buildWalls("maze2.txt");
     }
 
     // Update is called once per frame

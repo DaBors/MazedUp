@@ -9,6 +9,8 @@
 /MazedUpGame/[Bb]uilds/
 /MazedUpGame/[Ll]ogs/
 /MazedUpGame/[Mm]emoryCaptures/
+/Build/
+Build.zip
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/MazedUpGame/[Aa]ssets/**/*.meta
