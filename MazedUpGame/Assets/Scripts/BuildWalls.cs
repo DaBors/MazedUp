@@ -55,7 +55,7 @@ public class BuildWalls : MonoBehaviour
 
                             Vector3 positionForStructure = gameObject.transform.position + new Vector3(i * myWall.transform.localScale.x * 4, 0, lineNumber * myWall.transform.localScale.z * 4);
 
-                            if(line[i] == '1')
+                            if(line[i] != '1')
                             {
                                 if ((line[i] == 'B') && (playerIndex == 1))
                                 {
