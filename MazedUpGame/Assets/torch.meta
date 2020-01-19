@@ -1,12 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:MazedUpGame/Assets/Prefabs/WallPrefab.prefab.meta
-guid: 0d97a926608c5a54594a9952a53731e6
-PrefabImporter:
-=======
-guid: b01f0bfc7781f91498a00b71fd57aa14
+guid: 59b3f556cbd4aff42bb8f15b6c81f80a
 folderAsset: yes
 DefaultImporter:
->>>>>>> 7adac2cd915b594aa8119d02dcba53beb8a422cd:MazedUpGame/Assets/torch.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
