@@ -45,4 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myWall: {fileID: 3913639782565113897, guid: 0d97a926608c5a54594a9952a53731e6, type: 3}
   myFlame: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+  myFlickeringLight: {fileID: 0}
   myPlinth: {fileID: 100000, guid: de131f6499d3b794d9085d665f44a360, type: 3}
+  winPoint: {fileID: 6512122963004235664, guid: 144915dab5f337342b3c901964e6fc43,
+    type: 3}
+  playerIndex: 1
